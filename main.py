@@ -155,7 +155,7 @@ def save(df_melhores, df_piores, logs=[]):
             for log in logs:
                 f.write(log + "\n")
 
-    send_email("henriqueluiz1103@gmail.com", os.getenv('EMAIL_PASS') , "henriqueluiz1103@gmail.com", "Relatório Notebooks", "Olá, aqui está o seu relatório dos notebooks extraídos da Magazine Luiza." , "Notebook.xlsx")
+    send_email(os.getenv('EMAIL_FROM'), os.getenv('EMAIL_PASS') , os.getenv('EMAIL_TO'), "Relatório Notebooks", "Olá, aqui está o seu relatório dos notebooks extraídos da Magazine Luiza." , "Notebook.xlsx")
 
 def send_email(From, password, To, subject, body, file):
     mensagem = MIMEMultipart()
